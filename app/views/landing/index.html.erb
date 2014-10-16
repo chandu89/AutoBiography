@@ -1,40 +1,24 @@
-<style type="text/css">
-	body{
-	background-image: url('/assets/sky-blue1.jpg');
-}
-</style>
-<div class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner ">
-    <div class="container">
-      <a class="brand" href="/">AutoBiography</a>
-      <ul class="nav">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-      <ul class="nav pull-right">
-        <li><a href="/users/sign_in">Sign In</a></li>
-        <li><a href="/users/sign_up">Sign Up</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="row">
-	<div class="span2"></div>
-	<div class="span6"  style="margin-top: 180px;">
-		<p style="text-align: center; font-family: 'ReplicaStdLight'; font-size: 4.5em; color: white; z-index: 100;">
-			When writing the story of life...
-			<br/>
-			Dont let anyone else to hold the pen!
-		</p> 
+<%unless user_signed_in?%>
+	<div class="row">
+		<div class="span2"></div>
+		<div class="span6"  style="margin-top: 180px;">
+			<p style="text-align: center; font-family: 'ReplicaStdLight'; font-size: 4.5em; color: white; z-index: 100;">
+				When writing the story of your life...
+				<br/>
+				Dont let anyone else to hold the pen!
+			</p> 
+		</div>
+		<div class="span4"></div>
 	</div>
-	<div class="span4"></div>
-</div>
-<footer class="span12" style="margin-top: 100px;text-align: center; font-family: Bodoni, Serif; font-style: italic;font-size: 1.5em; color: #eb2030!important;"> “I believe that we are who we choose to be.
+	<div class="span12" style="margin-top: 100px;text-align: center; font-family: Bodoni, Serif; font-style: italic;font-size: 1.5em; color: #eb2030!important;"> 
+		“I believe that we are who we choose to be.
 
-Nobody is going to come and save you. You've got to save yourself.
+		Nobody is going to come and save you. You've got to save yourself.
 
-Nobody is going to give you anything. You've got to go out and fight for it.
+		Nobody is going to give you anything. You've got to go out and fight for it.
 
-Nobody knows what you want except you, and nobody will be as sorry as you if you don't get it.
+		Nobody knows what you want except you, and nobody will be as sorry as you if you don't get it.
 
-So don't give up your dreams.” </footer>
+		So don't give up your dreams.” 
+	</div>
+<%end%>

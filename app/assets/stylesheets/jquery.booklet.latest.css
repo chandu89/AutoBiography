@@ -1,5 +1,7 @@
      body {background-color: #EEEEEE;
-   		background-image: url('/assets/wood.jpg');font:normal 12px/1.2 arial, verdana, sans-serif;}
+   		background-image: url('/assets/sky-blue1.jpg');font:normal 12px/1.2 arial, verdana, sans-serif;
+   		color: white;
+   	}
 
 
 	.booklet         {width:800px; height:600px; position:relative; margin:0 auto 10px; overflow:visible !important;}
