@@ -1,0 +1,2 @@
+module AutobioHelper
+end

@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: MyAutoBiography_development
+  pool: 5
+  username: postgres
+
+
