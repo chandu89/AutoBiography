@@ -1,0 +1,18 @@
+<style type="text/css">
+    textarea { 
+        font-size: 20px;
+        font-family: Arial;
+        color: lightslategray;
+    }
+</style>
+<div class="row">
+    <div class="span2"></div>
+    <div class="page-center span8">
+        <%= form_for @user_punch_info, url: {action: "create"} do |f| %>
+          <%= f.text_area :punch_text, :rows => 10, :cols => 200 ,:class => "span8"%><br/>
+          <%= f.submit  "Submit" ,:class => "btn btn-outline-inverse btn-lg btn-info",:style=> "font-size: 20px;" %>
+        <% end %>    
+    </div>
+</div>
+
+

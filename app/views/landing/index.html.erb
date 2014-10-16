@@ -1,4 +1,4 @@
-<%unless user_signed_in?%>
+<%if !user_signed_in?%>
 	<div class="row">
 		<div class="span2"></div>
 		<div class="span6"  style="margin-top: 180px;">
@@ -21,4 +21,6 @@
 
 		So don't give up your dreams.” 
 	</div>
+<%else%>
+	<%= render "shared/pen_writing" %>
 <%end%>
