@@ -1,6 +1,8 @@
 class LandingController < ApplicationController
 	def index
-		@user_punch_info = UserPunchInfo.where("user_id = ? ",current_user.id).first
+		unless current_user.blank?
+			@user_punch_info = UserPunchInfo.where("user_id = ? ",current_user.id).first	
+		end	
 	end
 	def new
 		@user_punch_info = UserPunchInfo.new

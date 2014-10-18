@@ -15,7 +15,7 @@
 				<li><a href="/about">About</a></li>
 			<%else%>
 				<li><a href="/users/sign_out">Add your day</a></li>
-				<li><a href="/users/sign_out">Your diary</a></li>
+				<li><a href="/autobio/index">Your diary</a></li>
 				<li><a href="/landing/new">Punch line</a></li>
 			<%end%>
 		</ul>
@@ -24,7 +24,7 @@
 				<li><a href="/users/sign_in">Sign In</a></li>
 				<li><a href="/users/sign_up">Sign Up</a></li>
 			<%else%>
-				<li><a href="/users/sign_out">Sign out</a></li>
+				<li><%= link_to "Sign out", destroy_user_session_path,:method => :delete %></li>
 			<%end%>
 		</ul>
 		</div>
