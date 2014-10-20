@@ -12,8 +12,22 @@
     }
 
 </style>
+<script type="text/javascript">
+    <%if !flash[:notice].blank? %>
+        $.gritter.add({
+            title: 'Notice',
+            text: '<%= flash[:notice]%>'
+        });
+    <%end%>
+    <%if !flash[:error].blank? %>
+        $.gritter.add({
+            title: 'Error',
+            text: '<%= flash[:error]%>'
+        });
+    <%end%>
+</script>
 <div class="row">
-    <div class="span2"></div>
+    <div class="span2"> </div>
     <div class="page-center span8">
         <%= form_for @autobio, url: {action: "create"} do |f| %>
             <%= f.label :Chapter_Heading ,:style=> "font-family: 'ReplicaStdLight'; font-size: 2.1em; color: white; z-index: 100;"%>

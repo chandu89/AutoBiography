@@ -9,9 +9,10 @@ class AutobioController < ApplicationController
   def create
   	@autobio = current_user.autobios.create(params[:autobio])
   	if @autobio.save
-  		flash[:notice] = "Successfully added your add.."	
+  		redirect_to new_autobio_path, :flash => { :notice => 'your day is successfully created.' }
+    else
+      redirect_to new_autobio_path, :flash => { :error => "Can't save your day " }
   	end
-  	redirect_to new_autobio_path
   end
   def show
   	
