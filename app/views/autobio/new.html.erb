@@ -1,0 +1,28 @@
+<style type="text/css">
+    textarea { 
+        font-size: 20px;
+        font-family: Arial;
+        color: lightslategray;
+    }
+    body{
+        background-image: url('/assets/W1.jpg');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+    }
+
+</style>
+<div class="row">
+    <div class="span2"></div>
+    <div class="page-center span8">
+        <%= form_for @autobio, url: {action: "create"} do |f| %>
+            <%= f.label :Chapter_Heading ,:style=> "font-family: 'ReplicaStdLight'; font-size: 2.1em; color: white; z-index: 100;"%>
+            <%= f.text_field :heading,:class => "span3"%><br/>
+            <%= f.label :Your_day ,:style=> "font-family: 'ReplicaStdLight'; font-size: 2.1em; color: white; z-index: 100;"%>
+            <%= f.text_area :about, :rows => 10, :cols => 200 ,:class => "span8"%><br/>
+            <%= f.submit  "Add today" ,:class => "btn btn-outline-inverse btn-lg btn-info",:style=> "font-size: 20px;" %>
+        <% end %>    
+    </div>
+</div>
+
+
