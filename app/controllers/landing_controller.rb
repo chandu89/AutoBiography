@@ -1,4 +1,5 @@
 class LandingController < ApplicationController
+	before_filter :authenticate_user!, :except => [:index]
 	def index
 		unless current_user.blank?
 			@user_punch_info = UserPunchInfo.where("user_id = ? ",current_user.id).first	
