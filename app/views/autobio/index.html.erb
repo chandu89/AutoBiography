@@ -41,7 +41,9 @@
 				<div class="b-load" >
 					<%@autobios.each do |autobio| %>
 					<div>
-						<h1><%= autobio.heading%></h1>
+						<%unless autobio.heading.blank?%>
+							<h1><%= autobio.heading%></h1>
+						<%end%>	
 						<p><%= autobio.about%></p>
 					</div>
 					<%end%>
