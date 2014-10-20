@@ -1,11 +1,13 @@
 class AutobioController < ApplicationController
+  before_filter :authenticate_user!
   def index
+    @autobios = current_user.autobios
   end
   def new
   	@autobio = current_user.autobios.new
   end
   def create
-  	@autobio = current_user.autobios.create(:about=> params[:about], :heading => params[:heading])
+  	@autobio = current_user.autobios.create(params[:autobio])
   	if @autobio.save
   		flash[:notice] = "Successfully added your add.."	
   	end
