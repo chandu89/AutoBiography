@@ -10,6 +10,14 @@
    
 </style>
  <%end%>
+ <script type="text/javascript">
+    <%if !flash[:notice].blank? %>
+        $.gritter.add({
+            title: 'Notice',
+            text: '<%= flash[:notice]%>'
+        });
+    <%end%>
+</script>
 <%if !user_signed_in?%>
 	<div class="row">
 		<div class="span2"></div>
