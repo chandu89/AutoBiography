@@ -1,6 +1,6 @@
 <style type="text/css">
 	body{
-        background-image: url('/assets/wood.jpg');
+        background-image: url('/assets/black3.png');
         background-repeat: no-repeat;
         background-position: 0 0;
         background-size: cover;
@@ -24,12 +24,12 @@
 
 						<% if devise_mapping.rememberable? -%>
 							<div>
-								<%= f.check_box :remember_me %> <%= f.label :remember_me %>
+								<%= f.check_box :remember_me,:class => "checkbox" %> <%= f.label :remember_me %>
 							</div>
 						<% end -%>
 
 					<div>
-						<%= f.submit "Log in",:class => "btn btn-outline-inverse btn-lg" %>
+						<%= f.submit "Log in",:class => "btn btn-outline-inverse btn-info btn-lg" %>
 					</div>
 				<% end %>
 			</div>
@@ -40,7 +40,7 @@
 <div class="container">
   	<div class="row">
   		<div class="" style="margin-top: 50px;">
-  			<a href="/users/password/new" class="btn btn-outline-inverse btn-lg">Forgot your password?</a>
+  			<a href="/users/password/new" class="btn btn-primary btn-outline-inverse btn-lg">Forgot your password?</a>
   		</div>
 	</div>
 </div>

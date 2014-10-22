@@ -11,20 +11,31 @@
 		<a class="brand"; style="color: palegoldenrod;" href="/">AutoBiography</a>
 		<ul class="nav header-text">
 		    <%if !user_signed_in?%>
-				<li class="active"><a href="/">Home</a></li>
-				<li><a href="/about">About</a></li>
+				<li class= "<%=(params[:selected] == "1" ? "active": "")%>"><%= link_to "Home", root_path(:selected=>"1")%></li>
+
+				<li class= "<%=(params[:selected] == "2" ? "active": "")%>"><%= link_to "About", about_index_path(:selected=>2)%></li>
 			<%else%>
-				<li><a href="/autobio/new">Add your day</a></li>
-				<li><a href="/autobio">Your diary</a></li>
-				<li><a href="/landing/new">Punch line</a></li>
+				<li class= "<%=(params[:selected] == "3" ? "active": "")%>">
+					<%= link_to "Add your day", new_autobio_path(:selected=>3)%></li>
+				</li>
+				 <li class= "<%=(params[:selected] == "4" ? "active": "")%>">
+				<%= link_to "Your diary", autobio_index_path(:selected=>4)%>
+				</li>
+				<li class= "<%=(params[:selected] == "5" ? "active": "")%>">
+					<%= link_to "Punch line", new_landing_path(:selected=>5)%>
+				</li>
 			<%end%>
 		</ul>
 		<ul class="nav pull-right">
 			<%if !user_signed_in?%>
-				<li><a href="/users/sign_in">Sign In</a></li>
-				<li><a href="/users/sign_up">Sign Up</a></li>
+				<li class= "<%=(params[:selected] == "6" ? "active": "")%>">
+				<%= link_to "sign_in", new_user_session_path(:selected=>6),:method => :GET %>
+				</li>
+				<li class= "<%=(params[:selected] == "7" ? "active": "")%>">
+				<%= link_to "sign_up", new_user_registration_path(:selected=>7),:method => :GET %>
+				</li>
 			<%else%>
-				<li><%= link_to "Sign out", destroy_user_session_path,:method => :delete %></li>
+				<li><%= link_to "Sign out", destroy_user_session_path,:method => :delete%></li>
 			<%end%>
 		</ul>
 		</div>
