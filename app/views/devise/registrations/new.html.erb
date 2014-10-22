@@ -1,6 +1,6 @@
 <style type="text/css">
 	body{
-        background-image: url('/assets/black3.png');
+        background-image: url('/assets/old_book2.jpg');
         background-repeat: no-repeat;
         background-position: 0 0;
         background-size: cover;
@@ -18,12 +18,12 @@
 					<%= devise_error_messages! %>
 
 					<div class="">
-						<%= f.label :email %>
+						<%= f.label :email,:style=>"color: black;" %>
 						<%= f.email_field :email, autofocus: true %>
 					</div>
 
 					<div>
-						<%= f.label :password %> 
+						<%= f.label :password ,:style=>"color: black;"%> 
 							<% if @validatable %>
 							<i style="color: red;">(<%= @minimum_password_length %> characters minimum)</i>
 						<% end %><br />
@@ -31,7 +31,7 @@
 					</div>
 
 					<div>
-						<%= f.label :password_confirmation %>				
+						<%= f.label :password_confirmation, :style=>"color: black;"%>				
 						<%= f.password_field :password_confirmation, autocomplete: "off" %>
 					</div>
 
