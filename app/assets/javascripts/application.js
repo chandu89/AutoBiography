@@ -23,6 +23,7 @@
 //= jquery-2.1.0.min
 //= jquery-1.4.4.min
 //= cufon-yui
+//= common
 //= ChunkFive_400.font
 //= Note_this_400.font
 
