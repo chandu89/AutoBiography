@@ -16,6 +16,7 @@
 //= require d3.min
 //= require jquery.easing.1.3
 //= jquery.gritter
+//= jquery.gritter.min
 //= jquery.booklet.latest.min
 //= jquery.booklet.latest
 //= jquery-ui-1.10.4.min
