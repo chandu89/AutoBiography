@@ -8,7 +8,7 @@
 <div class="row">
     <div class="span2"></div>
     <div class="page-center span8">
-        <div id="speak_btn_id" class="btn btn-info"  onclick="start_speaking(event)">
+        <div id="speak_btn_id" class="btn"  onclick="start_speaking(event)">
             <img  id="start_img"  src="/assets/mic.png"/>
         </div>
         <%= form_for @user_punch_info, url: {action: "create"} do |f| %>
