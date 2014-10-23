@@ -10,5 +10,9 @@
  *
  *= require_self
  *= common
+ *= style
+ *= jquery.gritter
+ *= jquery.booklet.1.1.0
+ *= jquery.booklet.latest
  *= require_tree .
  */
