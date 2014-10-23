@@ -14,10 +14,7 @@
 //= require jquery_ujs
 //= require d3
 //= require d3.min
-//= require jquery.easing.1.3
 //= jquery.gritter
-//= jquery.booklet.latest.min
-//= jquery.booklet.latest
 //= jquery-ui-1.10.4.min
 //= jquery-2.1.0.min
 //= jquery-1.4.4.min
