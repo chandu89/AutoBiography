@@ -13,16 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20141024134404) do
 
-  create_table "abouts", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.date     "DOB"
-    t.string   "gender"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "user_id"
-  end
-
   create_table "autobios", :force => true do |t|
     t.integer  "user_id"
     t.text     "about"
