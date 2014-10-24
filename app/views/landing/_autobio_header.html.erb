@@ -38,6 +38,8 @@
 				<%= link_to "Sign up", new_user_registration_path(:selected=>7),:method => :GET %>
 				</li>
 			<%else%>
+				<li style="margin-top: 10px; color:muted;"><%= current_user.first_name%>&nbsp;<%= current_user.last_name%>
+				</li>
 				<li><%= link_to "Sign out", destroy_user_session_path,:method => :delete%></li>
 			<%end%>
 		</ul>

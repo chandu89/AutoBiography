@@ -24,7 +24,10 @@
 		<div class="container span8">
 			<h2 class="white-text">Sign up</h2>
 			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-				<%= devise_error_messages! %>
+				<div class="font-gender" style="color:maroon;">
+					<%= devise_error_messages! %>
+				</div>
+					
 				<div class="row">
 					<div class="span3">
 						<%= f.text_field :first_name,:placeholder => "First Name", autofocus: true ,:style=>"background: #dddddd;font-size:18px;border: 2px solid #a1a1a1; border-radius: 25px;"%>
