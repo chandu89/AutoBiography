@@ -1,0 +1,122 @@
+<style type="text/css">
+    body{
+        background-image: url('/assets/old_book2.jpg');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+    }
+    select {
+        width: 119.5px;
+        border: 1px solid #cccccc;
+        background-color: #ffffff;
+    }
+    select.date-select {
+        width:auto;
+        border: 1px solid #cccccc;
+        background-color: #ffffff;
+    }
+</style>
+
+<div class="row margintop30">
+    <div class="span2"></div>
+    <div class="span10 ">
+        <h1 class="marginleft270 white-text">
+            User Profile
+       </h1>
+        <div class="margintop100">
+            <%= form_for @about, url: {action: "create"} ,remote: true do |f| %>
+                <div class="row ">
+                    <div class="span2">
+                        <%= f.label :First_Name ,:class=>"font20"%>
+                    </div>
+                    <div class="span6">
+                        <%= f.text_field :first_name ,:class=>"font20 width350"%>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2">
+                        <%= f.label :Last_Name ,:class=>"font20"%>
+                    </div>
+                    <div class="span6">
+                        <%= f.text_field :last_name ,:class=>"font20 width350"%>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2">
+                        <%= f.label :Date_Of_Birth ,:class=>"font20"%>
+                    </div>
+                    <div class="span6">
+                        <%=f.date_select :DOB,:class => "date-select",:order => [:day, :month, :year],prompt: { day: 'Day', month: 'Month', year: 'Year' } , :start_year => 100.years.ago.year, :end_year=> Date.today.year%>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2">
+                        <%= f.label :Gender ,:class=>"font20"%>
+                    </div>
+                    <div class="span6">
+                        <%= f.select :gender, options_for_select([['Gender', ''],['Male','m'],['Female','f']])%>
+
+                    </div>
+                </div>
+                <div style="margin-top: 100px;margin-left: 340px;">
+                   <%= f.submit  "Submit" ,:class => "btn btn-outline-inverse btn-lg btn-info",:style=> "font-size: 20px;" %> 
+                </div>
+                
+            <% end %>   
+        </div> 
+    </div>
+</div>
+
+
+<div class="row margintop30 hide" id="edit_form">
+    <div class="span2"></div>
+    <div class="span10 ">
+        <h1 class="marginleft270 white-text">
+            User Profile
+       </h1>
+        <div class="margintop100">
+                <div class="row ">
+                    <div class="span2">
+                        <p class="font20"> First Name :</p>
+                    </div>
+                    <div class="span6">
+                        <p class="font20" id="f_name"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2">
+                        <p class="font20"> Last Name :</p>
+                    </div>
+                    <div class="span6">
+                        <p class="font20" id="l_name"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2">
+                        <p class="font20"> Date of Birth :</p>
+                    </div>
+                    <div class="span6">
+                        <p class="font20" id="dob"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2">
+                        <p class="font20"> Gender :</p>
+                    </div>
+                    <div class="span6">
+                        <p class="font20" id="gen"></p>
+                    </div>
+                </div>
+        </div> 
+    </div>
+</div>
+
+<script type="text/javascript">
+    <%if !flash[:error].blank? %>
+        $.gritter.add({
+            title: 'Error',
+            text: '<%= flash[:error]%>'
+        });
+    <%end%>
+</script>

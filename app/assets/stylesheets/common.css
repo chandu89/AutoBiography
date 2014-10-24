@@ -1,3 +1,28 @@
 li.active{
 	color: red;
+	background: red;
+}
+.page-center{
+	margin-top: 170px;
+	color: white ;
+}
+.margintop30{
+	margin-top: 30px;
+	color: white ;
+}
+.font20{
+	font-size: 20px;
+}
+.marginleft270{
+	margin-left: 270px;
+}
+.white-text{
+	color: white ;
+}
+.width350{
+	width: 350px;
+}
+.margintop100{
+	margin-top: 100px;
+	color: white ;
 }

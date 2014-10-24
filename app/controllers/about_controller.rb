@@ -1,4 +1,5 @@
 class AboutController < ApplicationController
+    before_filter :authenticate_user!, :except => [:index,:get_jason_data]
   def index
   	
   end
@@ -74,5 +75,28 @@ class AboutController < ApplicationController
     }]
 }
 	render :json => response.to_json
+  end
+  def new
+        @about = About.new
+  end
+  def create
+    @date = Date.civil(params[:about]["DOB(1i)"].to_i,
+                         params[:about]["DOB(2i)"].to_i,
+                         params[:about]["DOB(3i)"].to_i)
+        @about = About.create({:first_name=> params[:about][:first_name],:last_name=>params[:about][:last_name],:DOB=> @date,:gender=> params[:about][:gender],:user_id => current_user.id})
+        if @about.save
+            respond_to do |format|
+                format.html
+                format.js 
+            end
+        else
+            redirect_to new_about_path, :flash => { :error => "Can't save your profile " }
+        end
+  end
+  def edit
+      
+  end
+  def update
+      
   end
 end

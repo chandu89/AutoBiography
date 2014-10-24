@@ -1,0 +1,7 @@
+$.gritter.add({
+            title: 'Notice',
+            text: "successfully updated your profile"
+        });
+$("#new_about").addClass("hide");
+$("#edit_form").removeClass("hide");
+$("#f_name").html("<%= @about.first_name%>")
