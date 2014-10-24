@@ -32,11 +32,24 @@
         <%= form_for @autobio, url: {action: "create"} do |f| %>
             <%= f.label :Chapter_Heading ,:style=> "font-family: 'ReplicaStdLight'; font-size: 2.1em; color: white; z-index: 100;"%>
             <%= f.text_field :heading,:class => "span3",:style=>"font-size: 20px; color:black;"%><br/>
-            <%= f.label :Your_day ,:style=> "font-family: 'ReplicaStdLight'; font-size: 2.1em; color: white; z-index: 100;"%>
+            <div class="row">
+                <div class="span2">
+                    <%= f.label :Your_day ,:style=> "font-family: 'ReplicaStdLight'; font-size: 2.1em; color: white; z-index: 100;"%>
+                </div>
+                <div id="speak_btn_id" class="btn pull-right"  onclick="start_speaking(event,'autobio_about')">
+                    <img  id="start_img"  src="/assets/mic.png"/>
+                </div>
+            </div>
+            
+            
             <%= f.text_area :about, :rows => 10, :cols => 200 ,:class => "span8", :maxlength=> 985,:style=>"font-size: 20px; color:black;"%><br/>
             <%= f.submit  "Add today" ,:class => "btn btn-outline-inverse btn-lg btn-info",:style=> "font-size: 20px;" %>
         <% end %>    
     </div>
 </div>
 
-
+<script type="text/javascript">
+if (!browser.match("Chrome")) {
+    $("#speak_btn_id").hide();
+}
+</script>

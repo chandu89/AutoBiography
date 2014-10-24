@@ -22,7 +22,7 @@ if (browser.match("Chrome")) {
     var recognition = new webkitSpeechRecognition();
 }
 
-  function start_speaking(event) {
+  function start_speaking(event,id) {
 
     if (!('webkitSpeechRecognition' in window)) {
       alert("Sorry, your Browser does not support the Speech recognition");
@@ -33,7 +33,6 @@ if (browser.match("Chrome")) {
         startButton(event);
         recognition.onstart = function() {
           $("#start_img").attr("src","/assets/mic-animate.png");
-          $("#start_img").parent().css("margin-top","-44px");
           recognizing = true;
           showInfo('info_speak_now');
         };
@@ -61,7 +60,6 @@ if (browser.match("Chrome")) {
           recognizing = false;
           console.log("end speeching....");
           $("#start_img").attr("src","/assets/mic.png");
-          $("#start_img").parent().css("margin-top","-35px");
           if (ignore_onend) {
             return;
           }
@@ -82,10 +80,10 @@ if (browser.match("Chrome")) {
             }
           }
           if (linebreak(interim_transcript).length > 0) {
-            $("#user_punch_info_punch_text").val(linebreak(final_transcript+interim_transcript),true);
+            $("#"+id).val(linebreak(final_transcript+interim_transcript),true);
           }else{
             final_transcript = capitalize(final_transcript);
-            $("#user_punch_info_punch_text").val(linebreak(final_transcript),true);
+            $("#"+id).val(linebreak(final_transcript),true);
           }
         };
 
@@ -105,7 +103,6 @@ if (browser.match("Chrome")) {
             recognition.stop();
             console.log("Stopped");
             $("#start_img").attr("src","/assets/mic.png");
-            $("#start_img").parent().css("margin-top","-35px");
             recognizing = false;
             return;
           }
