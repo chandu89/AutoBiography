@@ -28,7 +28,7 @@
 <script type="text/javascript">
 	window.onload = function(){
 	<%if !@user_punch_info.blank?%>
-		$("#letter_src").html("<%= @user_punch_info.punch_text.html_safe%>")
+		$("#letter_src").html("<%=escape_javascript(@user_punch_info.punch_text.html_safe)%>")
 	<%end%>
     // public variables
     var vLetter = document.getElementById('letter');
