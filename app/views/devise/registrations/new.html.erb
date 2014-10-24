@@ -5,39 +5,84 @@
         background-position: 0 0;
         background-size: cover;
     }
+     select {
+        width: 121px;
+        border: 1px solid #cccccc;
+        background-color: #ffffff;
+        font-size:18px;
+        border-radius: 25px;
+    }
+    select.date-select {
+        width:auto;
+        background-color: #ffffff;
+    }
+
 </style>
-<div class="container">
-  	<div class="row">
-  		<div class="span4"></div>
-  		<div class="span6">
-        	<div class="page-center white-text">
-
-				<h2>Sign up</h2>
-
-				<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-					<%= devise_error_messages! %>
-
-					<div class="">
-						<%= f.label :email,:style=>"color: black;" %>
-						<%= f.email_field :email, autofocus: true %>
+<div class="margintop50">
+	<div class="row">
+		<div class="span2"></div>
+		<div class="container span8">
+			<h2 class="white-text">Sign up</h2>
+			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+				<%= devise_error_messages! %>
+				<div class="row">
+					<div class="span3">
+						<%= f.text_field :first_name,:placeholder => "First Name", autofocus: true ,:style=>"background: #dddddd;font-size:18px;border: 2px solid #a1a1a1; border-radius: 25px;"%>
 					</div>
-
-					<div>
-						<%= f.label :password ,:style=>"color: black;"%> 
-							<% if @validatable %>
-							<i style="color: red;">(<%= @minimum_password_length %> characters minimum)</i>
-						<% end %><br />
-						<%= f.password_field :password, autocomplete: "off" %>
+					<div class="span3" style="margin-left:-40px;">
+						<%= f.text_field :last_name,:placeholder => "Last Name", autofocus: "off",:style=>"background: #dddddd;font-size:18px;border: 2px solid #a1a1a1; border-radius: 25px;" %>
 					</div>
-
-					<div>
-						<%= f.label :password_confirmation, :style=>"color: black;"%>				
-						<%= f.password_field :password_confirmation, autocomplete: "off" %>
+				</div>
+				<div class="row">
+					<div class="span4">
+						<%= f.email_field :email,:placeholder => "Email", autofocus: "off" ,:class=>"width436",:style=>"background: #dddddd;font-size:18px;border: 2px solid #a1a1a1; border-radius: 25px;"%>
 					</div>
+				</div>
+				<div class="row"> 
+					<div class="span4">
+						<% if @validatable %>
+							<p class="font-gender">(<%= @minimum_password_length %> characters minimum)</p>
+						<% end %>
+						<%= f.password_field :password, autocomplete: "off" ,:placeholder => "New Password",:class=>"width436",:style=>"background: #dddddd;font-size:18px;border: 2px solid #a1a1a1; border-radius: 25px;"%>
+					</div>
+				</div>
 
-					<div><%= f.submit "Sign up" ,:class => "btn btn-outline-inverse btn-info btn-lg"%></div>
-				<% end %>
-			</div>
+				<div class="row"> 
+					<div class="span4">			
+					<%= f.password_field :password_confirmation, autocomplete: "off",:placeholder => "Confirm Password",:class=>"width436",:style=>"background: #dddddd;font-size:18px;border: 2px solid #a1a1a1; border-radius: 25px;" %>
+					</div>
+				</div>
+				<div class="row"> 
+					<div class="span4">
+						<p class="font-gender">Birthday</p>
+						<%= f.date_select :Birthday,:class => "date-select",:order => [:day, :month, :year],prompt: { day: 'Day', month: 'Month', year: "Year" } , :start_year => 100.years.ago.year, :end_year=> Date.today.year%>
+					</div>
+				</div>
+				<div class="row"> 
+					<div class="span1">
+					    <%= f.radio_button :gender, true , :checked => true%>
+					</div>
+					<div class="span1" style="margin-left: -50px;">
+						<%= f.label :gender, "Male", :value => "true" ,:class=>"font-gender" %>
+					  
+					</div>
+					<div class="span1">
+						<%= f.radio_button :gender, false %>
+					</div>
+					<div class="span2" style="margin-left: -50px;">
+						<%= f.label :gender, "Female", :value => "false" ,:class=>"font-gender"%>
+					</div>  
+				</div>
+				<p class="terms-text">
+					By clicking Sign Up, you agree to our Terms and that you have read our Data Use Policy, including our Cookie Use.
+				</p>
+				<div class="row"> 
+					<div class="span4">
+						<%= f.submit "Sign up" ,:class => "btn btn-outline-inverse btn-success btn-large"%>
+					</div>
+				</div>
+				
+			<% end %>
 		</div>
 	</div>
 </div>
