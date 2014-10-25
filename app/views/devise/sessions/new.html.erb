@@ -1,11 +1,3 @@
-<style type="text/css">
-	body{
-        background-image: url('/assets/old_book2.jpg');
-        background-repeat: no-repeat;
-        background-position: 0 0;
-        background-size: cover;
-    }
-</style>
 <div class="container">
   	<div class="row">
   	<div class="span4"></div>
@@ -14,22 +6,22 @@
 		  		<h2>Log in</h2>
 				<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 					<div>
-						<%= f.label :email ,:style=>"color: black;"%><br />
-						<%= f.email_field :email, autofocus: true %></div>
+						<%#= f.label :email ,:style=>"color: black;"%><br />
+						<%= f.email_field :email,:placeholder => "Email", autofocus: true ,:style=>"background: white;font-size:15px;border: 1px solid #a1a1a1; border-radius: 15px;" %></div>
 
 						<div>
-							<%= f.label :password,:style=>"color: black;" %><br />
-							<%= f.password_field :password, autocomplete: "off" %>
+							<%#= f.label :password,:style=>"color: black;" %><br />
+							<%= f.password_field :password, autocomplete: "off", :placeholder => "password",:style=>"background: white;font-size:15px;border: 1px solid #a1a1a1; border-radius: 15px;"%>
 						</div>
 
 						<% if devise_mapping.rememberable? -%>
 							<div>
-								<%= f.check_box :remember_me,:class => "checkbox" %> <%= f.label :remember_me ,:style=>"color: black;"%>
+								<%= f.check_box :remember_me,:class => "checkbox" %> <%= f.label :remember_me ,:class=>"font-gender"%>
 							</div>
 						<% end -%>
 
 					<div>
-						<%= f.submit "Log in",:class => "btn btn-outline-inverse btn-info btn-lg" %>
+						<%= f.submit "Log in",:class => "btn btn-outline-inverse btn-info btn-lg btn-large" %>
 					</div>
 				<% end %>
 			</div>
