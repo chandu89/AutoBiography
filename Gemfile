@@ -10,7 +10,7 @@ gem 'devise'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
-
+gem 'encrypted_strings'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
