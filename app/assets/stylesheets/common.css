@@ -3,6 +3,9 @@ li.active{
 }
 .margintop50{
 	margin-top: 50px;
+}
+.margintop50center{
+	margin-top: 50px;
 	text-align: center;
 }
 .width436{
