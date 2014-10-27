@@ -43,3 +43,7 @@ select.date-select {
     width:auto;
     background-color: #ffffff;
 }
+.margintop30center{
+	margin-top: 30px; 
+    text-align: center;
+}
