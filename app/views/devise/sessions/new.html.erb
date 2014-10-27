@@ -15,8 +15,8 @@
 						</div>
 
 						<% if devise_mapping.rememberable? -%>
-							<div>
-								<%= f.check_box :remember_me,:class => "checkbox" %> <%= f.label :remember_me ,:class=>"font-gender"%>
+							<div class="checkbox">
+								<label class="font-gender"><%= f.check_box :remember_me,:class => "checkbox" %>&nbsp;Remember me</label>
 							</div>
 						<% end -%>
 
@@ -29,10 +29,11 @@
   	</div>
 </div>
 <%#= render "devise/shared/links" %>
-<div class="container">
+<!-- <div class="container">
   	<div class="row">
   		<div class="" style="margin-top: 50px;">
   			<a href="/users/password/new" class="btn btn-primary btn-outline-inverse btn-lg">Forgot your password?</a>
   		</div>
 	</div>
 </div>
+ -->
