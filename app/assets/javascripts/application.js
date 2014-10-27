@@ -15,15 +15,15 @@
 //= require d3
 //= require d3.min
 //= require jquery.easing.1.3
-//= jquery.gritter
-//= jquery.gritter.min
-//= jquery.booklet.latest.min
-//= jquery.booklet.latest
-//= jquery-ui-1.10.4.min
-//= jquery-2.1.0.min
-//= jquery-1.4.4.min
-//= cufon-yui
-//= common
-//= ChunkFive_400.font
-//= Note_this_400.font
+//= require jquery.gritter
+//= require jquery.gritter.min
+//= require jquery.booklet.latest.min
+//= require jquery.booklet.latest
+//= require jquery-ui-1.10.4.min
+//= require jquery-2.1.0.min
+//= require jquery-1.4.4.min
+//= require cufon-yui
+//= require common
+//= require ChunkFive_400.font
+//= require Note_this_400.font
 
