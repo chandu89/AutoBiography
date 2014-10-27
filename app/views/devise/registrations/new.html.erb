@@ -18,24 +18,30 @@
 				</div>
 				<div class="row">
 					<div class="span4">
-						<%= f.email_field :email,:placeholder => "Email", autofocus: "off" ,:class=>"width436",:style=>"background: #dddddd;font-size:18px;border: 2px solid #a1a1a1; border-radius: 25px;"%>
+						<%= f.email_field :email,:placeholder => "*Email", autofocus: "off" ,:class=>"width436",:style=>"background: #dddddd;font-size:18px;border: 2px solid #a1a1a1; border-radius: 25px;"%>
 					</div>
 				</div>
 				<div class="row"> 
 					<div class="span4">
 						
-						<%= f.password_field :password, 'data-toggle'=>"tooltip",autocomplete: "off" ,:placeholder => "New Password",:class=>"width436",:style=>"background: #dddddd;font-size:18px;border: 2px solid #a1a1a1; border-radius: 25px;"%>
+						<%= f.password_field :password, 'data-toggle'=>"tooltip",autocomplete: "off" ,:placeholder => "*New Password",:class=>"width436",:style=>"background: #dddddd;font-size:18px;border: 2px solid #a1a1a1; border-radius: 25px;"%>
 					</div>
 				</div>
 
 				<div class="row"> 
 					<div class="span4">			
-					<%= f.password_field :password_confirmation, autocomplete: "off",:placeholder => "Confirm Password",:class=>"width436",:style=>"background: #dddddd;font-size:18px;border: 2px solid #a1a1a1; border-radius: 25px;" %>
+					<%= f.password_field :password_confirmation, autocomplete: "off",:placeholder => "*Confirm Password",:class=>"width436",:style=>"background: #dddddd;font-size:18px;border: 2px solid #a1a1a1; border-radius: 25px;" %>
+					</div>
+				</div>
+				<div class="row"> 
+					<div class="span4">			
+					<%= f.text_field :Mobile, autocomplete: "off",:placeholder => "Mobile",:maxlength => 10,:class=>"width436",:style=>"background: #dddddd;font-size:18px;border: 2px solid #a1a1a1; border-radius: 25px;" %>
 					</div>
 				</div>
 				<div class="row"> 
 					<div class="span4">
 						<p class="font-gender">Birthday</p>
+
 						<%= f.date_select :Birthday,:class => "date-select",:order => [:day, :month, :year],prompt: { day: 'Day', month: 'Month', year: "Year" } , :start_year => 100.years.ago.year, :end_year=> Date.today.year%>
 					</div>
 				</div>
@@ -78,5 +84,4 @@
 		</div>
 	</div>
 </div>
-
 <%#= render "devise/shared/links" %>
