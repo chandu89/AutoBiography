@@ -6,6 +6,7 @@
     background-size: cover;
 }
 </style>
+
 <div class="container">
   	<div class="row">
   	<div class="span4"></div>
@@ -45,3 +46,11 @@
 	</div>
 </div>
  -->
+ <script type="text/javascript">
+    <% flash.each do |key, value| %>
+        $.gritter.add({
+            title: '<%= key.capitalize %>',
+            text: '<%= value %>'
+        });
+    <% end %>
+</script>

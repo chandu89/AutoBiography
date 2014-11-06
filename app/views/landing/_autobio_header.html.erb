@@ -14,7 +14,7 @@
 		<a class="brand"; style="color: palegoldenrod;" href="/">AutoBiography</a>
 		<ul class="nav header-text">
 		    <%if !user_signed_in?%>
-				<li class= "<%=(params[:selected] == "1" ? "active": "")%>"><%= link_to "Home", root_path(:selected=>"1")%></li>
+				<!-- <li class= "<%#=(params[:selected] == "1" ? "active": "")%>"><%#= link_to "Home", root_path(:selected=>"1")%></li> -->
 
 				<li class= "<%=(params[:selected] == "2" ? "active": "")%>"><%= link_to "About", about_index_path(:selected=>2)%></li>
 			<%else%>
