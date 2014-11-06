@@ -1,0 +1,132 @@
+<style type="text/css">
+	#inkwell1 {
+	    bottom: 100px;
+	    left: 140px;
+	    position: fixed;
+	}
+	#inkwell2 {
+	    bottom: 100px;
+	    left: 140px;
+	    position: fixed;
+	    visibility: hidden;
+	}
+	#letter {
+	    /*font-family: Comic Sans MS;*/
+	    font-size: 18px;
+	    /*font-weight: italic;*/
+	    margin: 50px auto;
+	    position: relative;
+	    width: 75%;
+	    margin-top: 120px;
+	   font-family: Verdana, sans-serif;
+	}
+	#letter_src {
+	    display: none;
+	}
+</style>
+
+<script type="text/javascript">
+	window.onload = function(){
+	<%if !@user_punch_info.blank?%>
+		$("#letter_src").html("<%=escape_javascript(@user_punch_info.punch_text.html_safe)%>")
+	<%end%>
+    // public variables
+    var vLetter = document.getElementById('letter');
+    var iSpeedInk = 5;
+
+    // other variables
+    var sText = document.getElementById('letter_src').innerHTML;
+    var iCurChar = 0;
+    var sChars = '<span>';
+    var iCurInk = 0;
+    var sCurCaret = '';
+    var sCaret = "&nbsp;<img src='/assets/pen.gif' style='position:absolute' />";
+
+    var doStep = function () {
+        // current char
+        var sChar = sText.charAt(iCurChar);
+
+        // default char delay
+        var iDelay = 100;
+
+        if (sChar == '') {
+            sCurCaret = '';
+        } else if (sChar == '|') { // we use | symbol to emulate 'error' symbol
+            sChar = '';
+            sChars = sChars.substring(0, sChars.length-1);
+            iDelay = 64;
+        } else if (sChar == '<') { // pass tags
+            var iPos = sText.indexOf('>', iCurChar);
+            sChar = sText.substring(iCurChar, iPos + 1);
+            iCurChar = iPos;
+        } else if (sChar == '&') { // pass html entities
+            var iPos = sText.indexOf(';', iCurChar);
+            sChar = sText.substring(iCurChar, iPos + 1);
+            iCurChar = iPos;
+        } else if (sChar == '.') { // custom delay in case of . symbol
+            iDelay = 300;
+        } else if (sChar == ',') { // custom delay in case of , symbol
+            iDelay = 100;
+        } else if (sChar == ' ') { // custom delay in case of space symbol
+            iDelay = 32;
+        } else if (iCurChar > 5) {
+            sCurCaret = sCaret;
+        }
+
+        // expenditure of ink
+        if (sChar == ' ') {
+            iCurInk += iSpeedInk;
+            sChar = '</span><span style="color:RGB(' + (iCurInk) + ',' + (iCurInk) + ',' + (iCurInk) + ')">' + sChar;
+        }
+
+        if (document.getElementById('inkwell2').style.visibility == 'visible') {
+            sCurCaret = sCaret;
+            document.getElementById('inkwell2').style.visibility = 'hidden';
+            sChar = '</span><span style="color:RGB(0,0,0)">' + sChar;
+        }
+
+        // refresh Ink
+        if (iCurInk > 160) {
+            iCurInk = 0;
+            document.getElementById('inkwell2').style.visibility = 'visible';
+            iDelay = 1000;
+            sCurCaret = '';
+        }
+
+        // add current char to chars
+        sChars += sChar;
+
+        // hide the caret at the end of the letter
+        if (iCurChar == sText.length - 1)
+            sCurCaret = '';
+
+        // update letter with new chars
+        vLetter.innerHTML = sChars + sCurCaret;
+
+        // goto next char
+        iCurChar++;
+
+        // next step
+        if (iCurChar < sText.length) {
+            setTimeout(doStep, 20 + iDelay);
+        }
+    }
+
+    doStep();
+};
+	</script>
+
+<div id="letter"></div>
+<img id="inkwell1" src="/assets/inkwell1.gif" alt="inkwell1" />
+<img id="inkwell2" src="/assets/inkwell2.gif" alt="inkwell2" />
+
+<div id="letter_src" style="margin-top: 180px;">
+
+	Hi, My name is chandan chow|ubey I experience differently from work to personal and love life and its my belief that everyone experience differently each day ,from morning to night i meet different person with there different behaviour.<br><br>
+	'Apart from all this i find that many thing that i want to share with someone who is more trusty than me, Once i tell one of my friend that i want to tell you something but please keep it secret than he replied "A secret is till now secret untill you dont share with any one " from that time  i try to find some solution'<br><br>
+	I thought diary would be the best solution but its wrong because |||||I have to carry that diary with me and it may heppens that somebody steal my diary and mis-utilise it. So try to make a solution so that i can share my secret with fully encrpted manner.<br><br>
+	Autobiography is the best solution i created for everyone.<br><br>
+	It is fully encrypted and it has many attractive features like voice rcognition(Chrome Supported) when you speak, your voice is automatically translated into text.....<br><br>
+	'And write your daily day as much as you want .....'
+	Till now its free :)<br><br>
+</div>
