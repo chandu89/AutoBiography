@@ -26,4 +26,4 @@
 //= require common
 //= require ChunkFive_400.font
 //= require Note_this_400.font
-
+//= require bistri.conference.min
