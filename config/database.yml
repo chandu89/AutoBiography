@@ -4,5 +4,6 @@ development:
   database: MyAutoBiography_development
   pool: 5
   username: postgres
+  password: postgres
 
 
