@@ -51,3 +51,17 @@ select.date-select {
 	margin-top: 30px; 
     text-align: center;
 }
+.landingBottomText{
+	text-align: center; 
+	font-family: Bodoni, Serif; 
+	font-style: italic;font-size: 1.5em; 
+	color: palegoldenrod !important;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  /*background-color: #f5f5f5;*/
+}

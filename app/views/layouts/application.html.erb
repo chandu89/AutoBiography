@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="/assets/A1.jpg">
 	<title>AutoBiography</title>
 	<%= stylesheet_link_tag    "application", :media => "all" %>
@@ -10,10 +11,12 @@
 <body>
 
 	<link rel="stylesheet" href="/assets/common.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="/assets/bootstrap.min" type="text/css" media="screen"/>
 	<script src="/assets/jquery.gritter" type="text/javascript"></script>
 	<script src="/assets/bistri.conference.min" type="text/javascript"></script>
 	<script src="/assets/jquery.gritter.min" type="text/javascript"></script>
 	<script src="/assets/common" type="text/javascript"></script>
+	<script src="/assets/bootstrap.min" type="text/javascript"></script>
 	<%= render "landing/autobio_header" %>
 	<%= yield %>
 </body>

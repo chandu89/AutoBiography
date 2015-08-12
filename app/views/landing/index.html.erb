@@ -19,35 +19,41 @@
     <%end%>
 </script>
 <%if !user_signed_in?%>
-	<div class="row">
-		<div class="span2"></div>
-		<div class="span6"  style="margin-top: 180px;">
+	<div class="row" style="margin-top: 180px;">
+		<div class="col-md-2 col-sm-2 col-lg-2">&nbsp;</div>
+		<div class="col-md-6 col-sm-6 col-lg-6" >
 			<p style="text-align: center; font-family: 'ReplicaStdLight'; font-size: 4.5em; color: white; z-index: 100;">
 				When writing the story of your life...
 				<br/>
 				Dont let anyone else to hold the pen!
 			</p> 
 		</div>
-		<div class="span4"></div>
 	</div>
-	<div class="span12" style="margin-top: 100px;text-align: center; font-family: Bodoni, Serif; font-style: italic;font-size: 1.5em; color: palegoldenrod !important;"> 
-		“I believe that we are who we choose to be.
+	<footer class="footer">
+	<div class="row" >
+		<div class="col-md-12 col-sm-12 col-lg-12 landingBottomText"> 
+			“I believe that we are who we choose to be.
 
-		Nobody is going to come and save you. You've got to save yourself.
+			Nobody is going to come and save you. You've got to save yourself.
 
-		Nobody is going to give you anything. You've got to go out and fight for it.
+			Nobody is going to give you anything. You've got to go out and fight for it.
 
-		Nobody knows what you want except you, and nobody will be as sorry as you if you don't get it.
+			Nobody knows what you want except you, and nobody will be as sorry as you if you don't get it.
 
-		So don't give up your dreams.” 
+			So don't give up your dreams.” 
+		</div>
 	</div>
-	<div style="margin-top: 150px; margin-left: 550px;">
-		<div id="fb-root" ></div>
-		<script src="http://connect.facebook.net/en_US/all.js#appId=761891063882924&amp;xfbml=1"></script>
-		<fb:like href="https://www.facebook.com/pages/Autobiography/743910598977598" send="false" layout="button_count" width="50" show_faces="false" font="">	
+
+	<div class="row">
+		<div class="col-md-6 col-sm-6 col-lg-6">&nbsp;</div>
+		<div class="col-md-6 col-sm-6 col-lg-6">
+			<div id="fb-root" ></div>
+			<script src="http://connect.facebook.net/en_US/all.js#appId=761891063882924&amp;xfbml=1"></script>
+			<fb:like href="https://www.facebook.com/pages/Autobiography/743910598977598" send="false" layout="button_count" width="50" show_faces="false" font="">	
 			</fb:like>
+		</div>
 	</div>
-
+	</div>
 <%else%>
 	<%= render "shared/pen_writing" %>
 <%end%>
