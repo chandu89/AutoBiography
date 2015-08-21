@@ -16,7 +16,7 @@
 		    <%if !user_signed_in?%>
 				<!-- <li class= "<%#=(params[:selected] == "1" ? "active": "")%>"><%#= link_to "Home", root_path(:selected=>"1")%></li> -->
 
-				<li class= "<%=(params[:selected] == "2" ? "active": "")%>"><%= link_to "About", about_index_path(:selected=>2)%></li>
+				<!-- <li class= "<%#=(params[:selected] == "2" ? "active": "")%>"><%#= link_to "About", about_index_path(:selected=>2)%></li> -->
 			<%else%>
 				<li class= "<%=(params[:selected] == "3" ? "active": "")%>">
 					<%= link_to "Add your day", new_autobio_path(:selected=>3)%></li>
@@ -37,10 +37,15 @@
 				<li class= "<%=(params[:selected] == "7" ? "active": "")%>">
 				<%= link_to "Sign up", new_user_registration_path(:selected=>7),:method => :GET %>
 				</li>
+				<li class= "<%=(params[:selected] == "2" ? "active": "")%>"><%= link_to "About", about_index_path(:selected=>2)%></li>
+
+				<li class= "<%=(params[:selected] == "8" ? "active": "")%>"><%= link_to "Blog", blog_index_path(:selected=>8)%></li>
+
 			<%else%>
 				<li style="margin-top: 10px; color:muted;"><%= current_user.first_name%>&nbsp;<%= current_user.last_name%>
 				</li>
 				<li><%= link_to "Sign out", destroy_user_session_path,:method => :delete%></li>
+
 			<%end%>
 		</ul>
 		</div>
