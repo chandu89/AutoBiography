@@ -1,4 +1,5 @@
 MyAutoBiography::Application.routes.draw do
+  resources :blog
   resources :conference
   devise_for :users
 	resources :landing do
